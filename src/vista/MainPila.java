@@ -33,8 +33,10 @@ public class MainPila {
         //pilaP.desapilar();
         //System.out.println("Pila \n"+ pilaP.toString());
         Pila<Productos> pd = OperacionesPila.pilaDuplicada(pilaP);
-
         System.out.println("Pila Duplicada\n" + pd.toString());
+
+        Pila<Productos> pi = OperacionesPila.pilaInvertida(pilaP);
+        System.out.println("Pila Invertida\n" + pi.toString());
     }
 
 }
