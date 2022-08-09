@@ -11,7 +11,7 @@ package modelo;
  */
 public class OperacionesPila {
 
-    public <T extends Base> Pila<T> pilaDuplicada(Pila<T> pilaOriginal) {
+    public static <T extends Base> Pila<T> pilaDuplicada(Pila<T> pilaOriginal) {
 
         Pila<T> piladuplicada = new Pila<>();
         Pila<T> pilaaux = new Pila<>();
