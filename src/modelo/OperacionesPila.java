@@ -5,6 +5,8 @@
  */
 package modelo;
 
+import datos.Productos;
+
 /**
  *
  * @author joan.penna
@@ -30,14 +32,30 @@ public class OperacionesPila {
         }
         return piladuplicada;
     }
+
     public static <T extends Base> Pila<T> pilaInvertida(Pila<T> pilaOriginal) {
         Pila<T> piladuplicada = pilaDuplicada(pilaOriginal);
         Pila<T> pilaInvertida = new Pila<>();
-        
-        while (!piladuplicada.estaVacia()){
+
+        while (!piladuplicada.estaVacia()) {
             pilaInvertida.apilar(piladuplicada.desapilar());
-            
+
         }
         return pilaInvertida;
+    }
+
+    public static <T extends Base> double calcularValorTotal(Pila<T> pilaOriginal) {
+        double totalValor = 0.0;
+
+        Pila<T> piladuplicada = pilaDuplicada(pilaOriginal);
+
+        while (!piladuplicada.estaVacia()) {
+            T elemento = piladuplicada.desapilar();
+            Productos objP = (Productos) elemento;
+            totalValor = objP.getCantidadProducto() * objP.getValor();
+
+        }
+
+        return totalValor;
     }
 }
